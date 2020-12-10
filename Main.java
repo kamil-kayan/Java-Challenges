@@ -1,24 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        SimpleCalculator sc = new SimpleCalculator();
-        sc.setFirstNumber(23);
-        sc.setSecondNumber(0);
+        Dimensions dimensions = new Dimensions(20, 20, 5);
+        Case theCase = new Case("220", "Hp", 230, dimensions);
 
-        System.out.println("Addition = " + sc.getAdditionResult());
-        System.out.println("Multiplication = " + sc.getMultiplicationResult());
+        Monitor theMonitor = new Monitor("27inch Beast", "Dell", 29, new Resolution(23, 22));
+        Motherboard motherboard = new Motherboard("Bj-200", "Acer", 4, 6, "v2.23");
 
-        System.out.println("Division = " + sc.getDivisionResult());
+        PC thePC = new PC(motherboard, theMonitor, theCase);
+        thePC.powerUp();
+        thePC.progLoader();//calling progLoader form PC class'
 
-        Person myn = new Person();
-        myn.setFirstName("Anzal");
-        myn.setLastName("Hussein");
-        myn.setAge(220);
-
-        System.out.println(myn.getFullName());
-
-        System.out.println(myn.getFirstName() + " " + myn.getLastName() + " is "
-                + myn.getAge() + " years old.");
 
     }
-
 }

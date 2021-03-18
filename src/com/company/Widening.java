@@ -8,7 +8,11 @@ package com.company;
 
 
 public class Widening {
-    String wide = "Super class Variable";
+    String wide ;
+
+    public void getWide(){
+        System.out.println("Super class Variable");
+    }
 
     public void show(){
         System.out.println("Super class Method ");
@@ -20,7 +24,11 @@ public class Widening {
 }
 
 class Wide extends Widening {
-    String wide = "sub class Variable";
+    String wide;
+
+    public void getWide2(){
+        System.out.println("Super class Variable");
+    }
 
     public void show2(){
         System.out.println("sub class Method ");
@@ -34,10 +42,29 @@ class WideningMain {
     public static void main(String[] args) {
         Widening wn = new Wide();
         wn.show();  //super class Method (50% unless we override it.)
-      // wn.show2();//Not Accessible.
+
+      /*
+         wn.show2();//Not Accessible.
+         wn.getWide2(); Sub class instance variables and methods not accessible;
+       */
+        wn.getWide();//Superclass instance variable.
 
             //Lets Call the sub class method that overrode.
         wn.display();
+
+            /* Now to overcome this and give the Programmer a 100% functionality,
+            * we have to declare the super class reference ro refer to a sub class class
+            * object then cast the reference of the super class using Narrowing.
+            * */
+        Widening widening = new Wide(); //Super class reference of type Sub class(Wide);
+        Wide wide = (Wide) widening;    //Using Narrowing we cast the Super class ref as class Wide's Type
+            //Now we can access all Methods and instance Variables;
+        wide.show2();   //Sub class Method
+        wide.show();    //Super class Method
+        wide.display();
+        wide.getWide();
+        wide.getWide2();
+
 
 
     }

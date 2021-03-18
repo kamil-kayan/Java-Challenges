@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Core Java Inheritance.iml" filepath="$PROJECT_DIR$/Core Java Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Type Casting/Type Casting.iml" filepath="$PROJECT_DIR$/Type Casting/Type Casting.iml" />
     </modules>
   </component>
 </project>
